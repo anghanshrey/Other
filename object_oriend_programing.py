@@ -143,12 +143,82 @@ print(p1.name)
 print(p1.age)
 print(p1.course)
 
+# class Student:
 
+class Student:
 
+    def __init__(self):
+        self.name = "vivek"
+        self.age = 20
     
+    def display(self):
+        print(f"Welcome to Python OOP")
+
+s1 = Student()
+
+s1.display()
+s1.name = "Rahul"
+print(s1.name)
+print(s1.age)
+
+# Bank Account App
+
+class BankAccount:
+
+    def __init__(self , name , __balance):
+        self.name = name
+        self.__balance = __balance
+
+    def deposite(self , amount):
+        if amount >= 1:
+            self.__balance += amount
+            print(f"{self.name} deposite Sucessfully.")
+        else:
+            print("Enter Positive Number!")
+            return
+
+    def Withdraw(self , amount):
+        if amount <= self.__balance:
+            self.__balance -= amount
+            print(f"{self.name}Withdraw Sucessfully")
+        else:
+            print("insufficient balance!")
+            return
+
+    def display(self):
+        print(f"{self.name} Current account balance : {float(self.__balance)}")
 
 
+name = input("Enter Your name : ")
+balance = int(input("Enter Opening balance : "))
 
+account = BankAccount(name, balance)
+
+while True:
+    print("""
+1. Display amount
+2. Deposit amount
+3.Withdraw amount
+4. Exit
+""")
+
+    choice = int(input("Select Your choice : "))
+
+    match choice:
+        case 1:
+            account.display()
+        case 2:
+            deposite = int(input("Enter Deposite amount : "))
+            account.deposite(deposite)
+        case 3:
+            withdraw = float(input("Enter Withdraw Amount : "))
+            account.Withdraw(withdraw)
+        case 4:
+            print("Thank you . Visiting again!")
+            break
+        case _:
+            print("Enter 1 to 4 choice Only.")
+        
 
 
 
