@@ -46,7 +46,7 @@ cae = ClassName()
 4. self keyword
 
 """
-
+'''
 class Car:
 
     # Contsructor 
@@ -95,6 +95,9 @@ car1.Car_Details()
 
 car1.User_Details()
 
+'''
+
+'''
 class Student:
 
   # contsructor
@@ -143,6 +146,9 @@ print(p1.name)
 print(p1.age)
 print(p1.course)
 
+'''
+
+'''
 # class Student:
 
 class Student:
@@ -161,6 +167,9 @@ s1.name = "Rahul"
 print(s1.name)
 print(s1.age)
 
+'''
+
+'''
 # Bank Account App
 
 class BankAccount:
@@ -218,7 +227,156 @@ while True:
             break
         case _:
             print("Enter 1 to 4 choice Only.")
-        
+
+'''
+
+# Multiple Objects with Destructor
+'''
+class Customer:
+
+  def __init__(self , name):
+    self.name = name
+    print(f"{self.name} logged in.")
+
+  def shopping(self):
+    print(f"{self.name} is shopping.")
+
+  def __del__(self):
+    print(f"{self.name} logged out.")
+
+c1 = Customer("Rahul")
+c2 = Customer("Priya")
+c3 = Customer("Ronak")
+
+c1.shopping()
+c2.shopping()
+c3.shopping()
+
+del c1
+del c2
+del c3
+'''
+# Default Constructor  , Destructor
+'''
+class Employee:
+
+  def __init__(self):
+    self.name = "vivek"
+    self.department = "IT"
+
+    print(self.name , "joined office.")
+
+  def display(self):
+    print("Employee :" , self.name)
+    print("Department : " , self.department)
+
+  def __del__(self):
+    print(self.name , "Left Office.")
+
+
+emp = Employee()
+
+emp.display()
+
+del emp
+'''
+# Bank Account
+
+'''
+class BankAccount:
+
+  def __init__(self , account_holder , account_number , balance):
+    self.account_holder = account_holder
+    self.account_number = account_number
+    self.balance = balance # Private Variable
+
+  def deposit(self , amount):
+
+    if amount > 0:
+      self.balance += amount
+      print(f"${amount} Deposited Successfully!.")
+
+    else:
+      print("Invalid amount.")
+
+
+  def withdraw(self , amount):
+
+    if amount <= 0:
+      print("Invalid amount.")
+
+    elif amount > self.balance:
+      print("Insufficient amount.")
+
+    else:
+      self.balance -= amount
+      print(f"${amount} withdraw Successfully!.")
+
+  def check_balance(self):
+    print(f"Current Balance : ${self.__balance}")
+
+  def display(self):
+
+    print("======= Account Details =======")
+
+    print("Account Holder : " , self.account_holder)
+    print("Account Number : " , self.account_number)
+    print("Account Balance : " , self.balance)
+
+
+name = input("Enter Account Holder Name : ")
+acc_num = int(input("Enter Account Number: "))
+balance = float(input("Enter Opening amount: "))
+
+account = BankAccount(name , acc_num , balance)
+
+print(account.balance)
+
+while True:
+
+  print("1. Deposit")
+  print("2. Withdraw")
+  print("3. Check Balance")
+  print("4. Display")
+  print("5. Exit")
+
+  choice = int(input("Enter your choice : "))
+
+  if choice == 1:
+
+    amount = float(input("Enter deposite amount : "))
+    account.deposit(amount)
+
+  elif choice == 2:
+
+    amount = float(input("Enter withdraw amount : "))
+    account.withdraw(amount)
+
+  elif choice == 3:
+    account.check_balance()
+
+  elif choice == 4:
+    account.display()
+
+  elif choice == 5:
+    print("Thank You!!!!")
+    break
+
+  else:
+    print("Invalid Choice")
+'''
+
+
+
+
+
+
+    
+
+
+
+
+
 
 
 
