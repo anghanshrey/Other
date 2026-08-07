@@ -84,4 +84,3 @@ while True:
             break
         case _:
             print("Enter 1 to 5 Number Only!")
-
