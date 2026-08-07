@@ -12,7 +12,7 @@ class Product:
 
     def get_price(self , getid):
         if self.product_id == getid:
-            return self.__price
+            return print(f"Name : {self.name} | Price : {self.__price}")
         else:
             print(f"invaild {getid}ID.")
 
@@ -92,8 +92,10 @@ while True:
 
     elif choice == 2:
 
-        
-   
+        get_id = int(input("Enter your id : "))
+
+        mobile.get_price(get_id)
+       
 
     elif choice == 3:
 
