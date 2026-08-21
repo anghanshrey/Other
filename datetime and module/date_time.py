@@ -2,6 +2,7 @@
 
 from datetime import datetime, timedelta , timezone
 import time
+import datetime
 
 # Current Date and Time
 
@@ -53,7 +54,7 @@ def date_diffrence():
     print("Today : " , today.strftime("%d-%m-%Y"))
     print("Diff : " , future_time.strftime("%d-%m-%Y"))
 
-date_diffrence()
+#date_diffrence()
 
 # UTC and Local time
 
@@ -64,4 +65,11 @@ def utc_local_time():
     print(utc_time)
     print(local_time)
 
-utc_local_time()
+#utc_local_time()
+
+def custom_time():
+
+    current_time = datetime.datetime(2025, 8, 21 , 12 , 30 , 40)
+    print(current_time)
+
+custom_time()
