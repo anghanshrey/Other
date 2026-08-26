@@ -36,6 +36,7 @@ print("sin" , math.sin(angle_radian))
 print("cos" , math.cos(angle_radian))
 """
 
+"""
 def Absolute(value):
 
     print("value : ", value)
@@ -46,5 +47,117 @@ def Absolute(value):
 value = float(input("Enter a decimal number : "))
 
 Absolute(value)
+"""
 
+"""
+numbers = []
 
+for i in range(10):
+    number = random.randint(1, 10)
+    numbers.append(number)
+
+print(numbers)
+"""
+
+"""
+dice = random.randint(0, 1)
+print("Dice Rolled:", dice)
+
+players = ["Rohit" , "Sachin" , "Rahul" , "Mahendra" , "Virat" , "Samson"]
+
+print(players)
+
+random.shuffle(players)
+
+print("Shuffle Players : ", players)
+
+students = ["Rahul" , "Vivek" , "pal" , "Bahubali" , "Nikunj" , "Sneha"]
+
+student = random.choice(students)
+
+print(student)
+"""
+
+# UUID : UUID1, UUID2 , UUID3, UUID4 , UUID5
+
+# 1. UUID1 - Time Based
+
+import uuid
+
+"""
+id = uuid.uuid1()
+
+print(id)
+"""
+
+# UUID2 - DCE Security
+
+# Python UUID2 is based on DCE Security must be focus on security parameters.
+
+# Python standard uuid does not provide a direct uuid2() function.
+"""
+id = uuid.uuid3(
+    uuid.NAMESPACE_DNS,
+    "shrey.com"
+)
+
+print(id)
+"""
+
+# UUID4
+
+# Real_world
+
+# E-commerce + order_id
+# College + student_id
+# Banking + Transaction id
+# API + Request ID
+# Database + Record ID
+
+id = uuid.uuid4()
+
+print(id)
+
+students = {
+    "ST001" : uuid.uuid4(),
+    "ST002" : uuid.uuid4(),
+    "ST003" : uuid.uuid4(),
+    "ST004" : uuid.uuid4(),
+    "ST005" : uuid.uuid4()
+}
+
+print("StudentID and UUID")
+
+for student_id , student_uuid in students.items():
+    print(student_id, ":" , student_uuid)
+
+uuid1 = uuid.uuid4()
+uuid2 = uuid.uuid4()
+
+if uuid1 == uuid2:
+    print("Both UUID are equal")
+else:
+    print("Both UUID are diffrent.")
+
+orders = []
+
+for i in range(3):
+    order_id = uuid.uuid4()
+    orders.append(order_id)
+
+print("E-commerce Order ID:")
+
+for order in orders:
+    print(order)
+
+student_data = [
+    {"name":"Rahul" , "age":22},
+    {"name":"Rajesh" , "age":85},
+    {"name":"Priya" , "age":24},
+    {"name":"Amit" , "age":28}
+]
+
+sorted_students = sorted(student_data , key=lambda student:student["name"])
+
+for student in sorted_students:
+    print(student)
